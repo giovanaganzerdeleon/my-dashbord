@@ -1,9 +1,9 @@
 function App() {
   return (
-    <>
-      <h1>OLÁ</h1>
-    </>
-  );
+    <div className="min-h-screen bg-background p-4 text-foreground">
+      <h1 className="font-heading text-3xl font-bold text-primary">Olá</h1>
+    </div>
+  )
 }
 
-export default App;
+export default App
