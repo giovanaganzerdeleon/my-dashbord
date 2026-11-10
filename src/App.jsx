@@ -1,10 +1,8 @@
-import Header from './components/Header.jsx';
-import Footer from './components/Footer.jsx';
-import Menu from './components/Menu.jsx';
-import SummaryCard from './components/SummaryCard.jsx';
-
-const areaClass =
-  'min-h-32 rounded-xl border-2 border-dashed border-border bg-surface p-4 text-muted';
+import Header from './components/Header.jsx'
+import Footer from './components/Footer.jsx'
+import Menu from './components/Menu.jsx'
+import SummaryCard from './components/SummaryCard.jsx'
+import Panel from './components/Painel.jsx'
 
 function App() {
   return (
@@ -16,18 +14,27 @@ function App() {
           xl:grid-cols-[15rem_1fr_1fr] xl:p-8"
       >
         <Menu />
-        <section id="summary" className={`${areaClass} md:col-span-2`}>
+
+        <Panel id="summary" title="Resumo" className="md:col-span-2">
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             <SummaryCard title="Jogos" value={42} icon="🎮" />
             <SummaryCard title="Horas jogadas" value={318} icon="⏱️" />
             <SummaryCard title="Zerados" value={17} icon="🏆" isHighlighted />
-            <SummaryCard title="Nota média" value="8,6" icon ="🏅" />
+            <SummaryCard title="Nota média" value="8,6" icon ="🏅"/>
           </div>
-        </section>
+        </Panel>
+
+        <Panel id="list" title="Lista" className="xl:min-h-80">
+          <p className="text-muted">Em construção.</p>
+        </Panel>
+
+        <Panel id="chart" title="Gráfico" className="xl:min-h-80">
+          <p className="text-muted">Em construção.</p>
+        </Panel>
       </main>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
