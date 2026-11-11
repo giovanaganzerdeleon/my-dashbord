@@ -7,7 +7,7 @@ function Header() {
       <h1 className="font-heading text-2xl font-bold md:text-3xl">
         Dashboard · Games
       </h1>
-      <p className="text-muted">Meus jogos e partidas</p>
+      <p className="text-muted">Meus jogos estatística</p>
     </header>
   );
 }
