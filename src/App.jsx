@@ -5,6 +5,7 @@ import SummaryCard from './components/SummaryCard.jsx';
 import Panel from './components/Painel.jsx';
 import InfoRow from './components/InfoRow.jsx';
 import StatusBadge from './components/StatusBadge.jsx';
+import DetailsToggle from './components/DetailsToggle.jsx';
 
 function App() {
   return (
@@ -37,8 +38,9 @@ function App() {
         >
           <div className="flex flex-wrap items-center gap-2">
             <h3 className="font-heading text-xl font-bold">AION2</h3>
-            <StatusBadge label ="Multiplayer" isActive />
-            <StatusBadge label ="RPG Massivo" />
+            <StatusBadge label="Multiplayer" isActive />
+            <StatusBadge label="Novo:2026" isActive />
+            <StatusBadge label="RPG Massivo" />
           </div>
           <p className="mt-1 text-muted">360 horas nas duas ultimas semanas</p>
           <div className="mt-4 grid gap-x-6 md:grid-cols-2">
@@ -46,6 +48,9 @@ function App() {
             <InfoRow label="Gênero" value="RPG" />
             <InfoRow label="Horas totais" value="500 hrs" />
             <InfoRow label="Conquistas" value="-" />
+            <DetailsToggle>
+              <p>Falta o último chefe e 3 áreas do mapa.</p>
+            </DetailsToggle>
           </div>
         </Panel>
 
