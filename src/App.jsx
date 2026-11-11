@@ -18,10 +18,23 @@ function App() {
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             <SummaryCard title="Jogos" value={42} icon="🎮" />
             <SummaryCard title="Conquistas" value={318} icon="🏆" />
-            <SummaryCard title="Completados" value={17} icon="☑️" isHighlighted />
+            <SummaryCard
+              title="Completados"
+              value={17}
+              icon="☑️"
+              isHighlighted
+            />
             <SummaryCard title="Nota média" value="8,6" icon="" />
           </div>
         </Panel>
+
+        <Panel id="highlight" title="Jogando agora" className="md:col-span-2">
+          <h3 className="font-heading text-xl font-bold">AION2</h3>
+          <p className="mt-1 text-muted">
+            Explorando O templo de fogo Conquista | tempo restante : 20 minutos
+          </p>
+        </Panel>
+
         <Panel id="list" title="Lista" className="xl:min-h-80">
           <p className="text-muted">Em construção.</p>
         </Panel>

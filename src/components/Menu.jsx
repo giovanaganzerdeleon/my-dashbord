@@ -19,7 +19,7 @@ function Menu() {
       id="menu"
       aria-label="Menu principal"
       className="rounded-xl border border-border bg-surface p-3
-        md:col-span-2 xl:col-span-1 xl:row-span-2"
+        md:col-span-2 xl:col-span-1 xl:row-span-3"
     >
       <button
         type="button"
@@ -52,6 +52,9 @@ function Menu() {
             Gráfico
           </a>
         </li>
+        <a href="#highlight" onClick={closeMenu} className={linkClass}>
+          Jogando agora
+        </a>
       </ul>
     </nav>
   );
