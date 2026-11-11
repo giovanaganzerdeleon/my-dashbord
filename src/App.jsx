@@ -3,6 +3,7 @@ import Footer from './components/Footer.jsx';
 import Menu from './components/Menu.jsx';
 import SummaryCard from './components/SummaryCard.jsx';
 import Panel from './components/Painel.jsx';
+import InfoRow from './components/InfoRow.jsx';
 
 function App() {
   return (
@@ -28,11 +29,19 @@ function App() {
           </div>
         </Panel>
 
-        <Panel id="highlight" title="Jogando agora" className="md:col-span-2">
+        <Panel
+          id="highlight"
+          title="Mais jogado do Mês"
+          className="md:col-span-2"
+        >
           <h3 className="font-heading text-xl font-bold">AION2</h3>
-          <p className="mt-1 text-muted">
-            Explorando O templo de fogo Conquista | tempo restante : 20 minutos
-          </p>
+          <p className="mt-1 text-muted">360 horas nas duas ultimas semanas</p>
+          <div className="mt-4 grid gap-x-6 md:grid-cols-2">
+            <InfoRow label="Plataforma" value="PC" />
+            <InfoRow label="Gênero" value="RPG" />
+            <InfoRow label="Horas totais" value="500 hrs" />
+            <InfoRow label ="Conquistas" value="-"/>
+          </div>
         </Panel>
 
         <Panel id="list" title="Lista" className="xl:min-h-80">

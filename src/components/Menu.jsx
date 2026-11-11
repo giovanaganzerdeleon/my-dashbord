@@ -53,7 +53,7 @@ function Menu() {
           </a>
         </li>
         <a href="#highlight" onClick={closeMenu} className={linkClass}>
-          Jogando agora
+         Mais Jogados
         </a>
       </ul>
     </nav>
