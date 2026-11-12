@@ -7,6 +7,19 @@ import InfoRow from './components/InfoRow.jsx';
 import StatusBadge from './components/StatusBadge.jsx';
 import DetailsToggle from './components/DetailsToggle.jsx';
 
+const summaryCards = [
+  { id: 'games', title: 'Jogos', value: 42, icon: '🎮' },
+  { id: 'hours', title: 'Conquistas', value: 318, icon: '🏆' },
+  {
+    id: 'completed',
+    title: 'Completados',
+    value: 17,
+    icon: '☑️',
+    isHighlighted: true,
+  },
+  { id: 'rating', title: 'Nota média', value: '8,6' },
+];
+
 function App() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
@@ -19,15 +32,15 @@ function App() {
         <Menu />
         <Panel id="summary" title="Resumo" className="md:col-span-2">
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            <SummaryCard title="Jogos" value={42} icon="🎮" />
-            <SummaryCard title="Conquistas" value={318} icon="🏆" />
-            <SummaryCard
-              title="Completados"
-              value={17}
-              icon="☑️"
-              isHighlighted
-            />
-            <SummaryCard title="Nota média" value="8,6" icon="" />
+            {summaryCards.map((card) => (
+              <SummaryCard
+                key={card.id}
+                title={card.title}
+                value={card.value}
+                icon={card.icon}
+                isHighlighted={card.isHighlighted}
+              />
+            ))}
           </div>
         </Panel>
 
@@ -46,10 +59,10 @@ function App() {
           <div className="mt-4 grid gap-x-6 md:grid-cols-2">
             <InfoRow label="Plataforma" value="PC" />
             <InfoRow label="Gênero" value="RPG" />
-            <InfoRow label="Horas totais" value="500 hrs" />
+            <InfoRow label="Ano de lançamento" value="2026" />
             <InfoRow label="Conquistas" value="-" />
             <DetailsToggle>
-              <p>Falta o último chefe e 3 áreas do mapa.</p>
+              <p>Horas Totais : 500 horas</p>
             </DetailsToggle>
           </div>
         </Panel>
