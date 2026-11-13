@@ -6,6 +6,7 @@ import Panel from './components/Painel.jsx';
 import InfoRow from './components/InfoRow.jsx';
 import StatusBadge from './components/StatusBadge.jsx';
 import DetailsToggle from './components/DetailsToggle.jsx';
+import ListItem from './components/ListItem.jsx';
 
 const summaryCards = [
   { id: 'games', title: 'Jogos', value: 42, icon: '🎮' },
@@ -21,12 +22,17 @@ const summaryCards = [
 ];
 
 const games = [
-  { id: 'bg3', title: 'Baldurs Gate 3', hours: 234, isCompleted: false },
-  { id: 'stardew-valley', title: 'Stardew Valley', hours: 217, isCompleted: false },
-  { id: 'Lop', title: 'Lies Of P', hours: 98, isCompleted: true },
-  { id: 'BioShock', title: 'BioShock Infinite', hours: 64, isCompleted: false },
-  { id: 'Sonic', title: 'Sonic Unleshead', hours: 45, isCompleted: true },
-  { id: 'Lis', title: 'Life Is Strange', hours: 16, isCompleted: true },
+  { id: 'bg3', title: 'Baldurs Gate 3', conquistas: 120, isCompleted: false },
+  {
+    id: 'stardew-valley',
+    title: 'Stardew Valley',
+    conquistas: 100,
+    isCompleted: false,
+  },
+  { id: 'Lop', title: 'Lies Of P', conquistas: 54, isCompleted: true },
+  { id: 'BioShock', title: 'BioShock Infinite', conquistas: 23, isCompleted: false },
+  { id: 'Sonic', title: 'Sonic Unleshead', conquistas: 45, isCompleted: true },
+  { id: 'Lis', title: 'Life Is Strange', conquistas: 60, isCompleted: true },
 ];
 
 function App() {
@@ -76,19 +82,10 @@ function App() {
           </div>
         </Panel>
 
-        <Panel id="list" title="Outros Jogos" className="xl:min-h-80">
+        <Panel id="list" title="Meus jogos" className="xl:min-h-80">
           <ul>
             {games.map((game) => (
-              <li
-                key={game.id}
-                className="flex flex-wrap items-center justify-between gap-2
-          border-b border-border py-3"
-              >
-                <div>
-                  <p className="font-bold">{game.title}</p>
-                  <p className="text-sm text-muted">{game.hours} h jogadas</p>
-                </div>
-              </li>
+              <ListItem key={game.id} title={game.title} conquistas={game.conquistas} />
             ))}
           </ul>
         </Panel>
